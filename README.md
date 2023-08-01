@@ -81,7 +81,7 @@ Contributions are welcome! If you have any bug fixes, enhancements, or new featu
 
 ## License
 
-The Expense Tracker Web App is open-source software licensed under the [MIT License](LICENSE).
+The Expense Tracker Web App is open-source software licensed under the [MIT License](LICENSE.txt).
 
 ---
 
