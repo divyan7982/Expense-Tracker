@@ -1,6 +1,5 @@
-# Expense Tracker Web App (ReactJS)
+# Expense Tracker Web App 
 
-![Expense Tracker Web App]
 ![image](https://github.com/divyan7982/Expense-Tracker/assets/131895243/26af2fd7-abf5-4376-bf1a-b41b2a31e5fc)
 
 
