@@ -64,8 +64,8 @@ The Expense Tracker Web App is built using the following technologies:
 - HTML5: The markup language used for structuring the app.
 - CSS3: Stylesheets used to design the app layout and appearance.
 
-##Toggle Dark Mode
-The Expense Tracker Web App also supports dark mode to provide a more comfortable viewing experience, especially during low-light conditions. To toggle dark mode, click on the "Dark Mode" button located at the top-right corner of the application.
+## Toggle Dark Mode
+The Expense Tracker Web App also supports dark mode to provide a more comfortable viewing experience, especially during low-light conditions. To toggle dark mode, click on the "Dark Mode" button located at the bottom of the application.
 
 ![image](https://github.com/divyan7982/Expense-Tracker/assets/131895243/3023c57b-9733-41b8-9594-9fa1bb09223c)
 
@@ -86,4 +86,4 @@ The Expense Tracker Web App is open-source software licensed under the [MIT Lice
 
 ---
 
-We hope you enjoy using the Expense Tracker Web App! If you encounter any issues or have any suggestions, feel free to create an issue on the GitHub repository. Happy expense tracking!
+We hope you enjoy using the Expense Tracker Web App! If you encounter any issues or have any suggestions, feel free to create an issue on the GitHub repository.
