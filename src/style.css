@@ -1,0 +1,166 @@
+/* CSS Styles */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+
+
+.list li {
+  color: #333;
+  display: flex; /* Display the list item and trash button in a flex container */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Distribute content and trash button to the sides */
+  position: relative;
+  padding: 5px;
+  margin: 10px;
+}
+
+.list li span {
+  flex: 1; /* Make the content take up all available space */
+  margin-right: 50px; /* Add right margin to separate content from trash button */
+}
+
+.list li .delete-btn {
+  background-color: blue;
+  color: #fff;
+  border: none;
+  border-radius: 150%;
+  cursor: pointer;
+  padding: 8px 10px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 500px;
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: black solid 2px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+.form-control label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-control input[type='text'],
+.form-control input[type='number'] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 2px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.transaction-list {
+  list-style: none;
+  padding: 0;
+}
+
+.transaction-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.transaction-list li:last-child {
+  border-bottom: none;
+}
+
+.income-expense {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border: black solid 2px;
+}
+
+.income-expense div {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  
+}
+
+.income-expense div h3 {
+  font-size: 14px;
+}
+
+.income-expense div p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+.dark-mode {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+.dark-mode h1 {
+  color: #fff;
+}
+
+.dark-mode .form-control input[type='text'],
+.dark-mode .form-control input[type='number'] {
+  background-color: #2d2d2d; /* Darker background color for inputs */
+  color: #fff;
+  border: 1px solid #444; /* Add border to inputs to distinguish them */
+}
+
+.dark-mode .form-control label {
+  color: #ddd; /* Lighter label color for better contrast */
+}
+
+.dark-mode .form-control input[type='text']::placeholder,
+.dark-mode .form-control input[type='number']::placeholder {
+  color: #bbb; /* Lighter placeholder color for inputs */
+}
+
+.dark-mode .transaction-list li {
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+.dark-mode .income-expense div {
+  background-color: #2d2d2d;
+  color: #fff;
+}
+
+.dark-mode .delete-btn {
+  background-color: #c0392b;
+}
