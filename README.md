@@ -67,6 +67,9 @@ The Expense Tracker Web App is built using the following technologies:
 ##Toggle Dark Mode
 The Expense Tracker Web App also supports dark mode to provide a more comfortable viewing experience, especially during low-light conditions. To toggle dark mode, click on the "Dark Mode" button located at the top-right corner of the application.
 
+![image](https://github.com/divyan7982/Expense-Tracker/assets/131895243/3023c57b-9733-41b8-9594-9fa1bb09223c)
+
+
 ## Contributing
 
 Contributions are welcome! If you have any bug fixes, enhancements, or new features to add, please follow these steps:
