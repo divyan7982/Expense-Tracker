@@ -1,166 +1,160 @@
-/* CSS Styles */
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
+  background-color: #f7f7f7;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
   margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Lato', sans-serif;
 }
 
-
-
-.list li {
-  color: #333;
-  display: flex; /* Display the list item and trash button in a flex container */
-  align-items: center; /* Center items vertically */
-  justify-content: space-between; /* Distribute content and trash button to the sides */
-  position: relative;
-  padding: 5px;
-  margin: 10px;
-}
-
-.list li span {
-  flex: 1; /* Make the content take up all available space */
-  margin-right: 50px; /* Add right margin to separate content from trash button */
-}
-
-.list li .delete-btn {
-  background-color: blue;
-  color: #fff;
-  border: none;
-  border-radius: 150%;
-  cursor: pointer;
-  padding: 8px 10px;
-  font-weight: bold;
+header {
+  background-color: #2ecc71;
+  color: #ffffff;
+  text-align: center;
+  height: 75px;
+  width: 100%;
 }
 
 .container {
-  max-width: 500px;
-  padding: 20px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  border: black solid 2px;
+  margin: 30px auto;
+  width: 350px;
 }
 
 h1 {
-  text-align: center;
-  margin-bottom: 20px;
+  letter-spacing: 1px;
+  margin: 0;
 }
 
-.form-control {
-  margin-bottom: 10px;
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
 }
 
-.form-control label {
-  font-size: 14px;
-  font-weight: bold;
+h4 {
+  margin: 0;
+  text-transform: uppercase;
 }
 
-.form-control input[type='text'],
-.form-control input[type='number'] {
-  width: 90%;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 4px;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-  margin: 2px;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.transaction-list {
-  list-style: none;
-  padding: 0;
-}
-
-.transaction-list li {
+.inc-exp-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
+  margin: 20px 0;
 }
 
-.transaction-list li:last-child {
-  border-bottom: none;
-}
-
-.income-expense {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  border: black solid 2px;
-}
-
-.income-expense div {
+.inc-exp-container > div {
   flex: 1;
   text-align: center;
-  padding: 10px;
-  background-color: #f2f2f2;
-  border-radius: 4px;
-  
 }
 
-.income-expense div h3 {
-  font-size: 14px;
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
 }
 
-.income-expense div p {
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #2ecc71;
+}
+
+.money.minus {
+  color: #c0392b;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  display: block;
   font-size: 16px;
-  font-weight: bold;
-  color: #555;
+  padding: 10px;
+  width: 100%;
 }
 
-.dark-mode {
-  background-color: #1f1f1f;
+.btn {
+  cursor: pointer;
+  background-color: #0366d6;
+  box-shadow: var(--box-shadow);
   color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
 }
 
-.dark-mode h1 {
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.list li.plus {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.minus {
+  border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
   color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.dark-mode .form-control input[type='text'],
-.dark-mode .form-control input[type='number'] {
-  background-color: #2d2d2d; /* Darker background color for inputs */
-  color: #fff;
-  border: 1px solid #444; /* Add border to inputs to distinguish them */
-}
-
-.dark-mode .form-control label {
-  color: #ddd; /* Lighter label color for better contrast */
-}
-
-.dark-mode .form-control input[type='text']::placeholder,
-.dark-mode .form-control input[type='number']::placeholder {
-  color: #bbb; /* Lighter placeholder color for inputs */
-}
-
-.dark-mode .transaction-list li {
-  background-color: #2d2d2d;
-  color: #fff;
-}
-
-.dark-mode .income-expense div {
-  background-color: #2d2d2d;
-  color: #fff;
-}
-
-.dark-mode .delete-btn {
-  background-color: #c0392b;
+.list li:hover .delete-btn {
+  opacity: 1;
 }
