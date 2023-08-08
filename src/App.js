@@ -1,121 +1,87 @@
-import React, { useState, useEffect, useContext } from 'react';
-import './style.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import React, { useState, useEffect } from 'react';
+import './style.css'; // Import the CSS file
+import Balance from './Balance';
+import IncomeExpense from './IncomeExpense';
+import TransactionHistory from './TransactionHistory';
+import AddTransactionForm from './AddTransactionForm';
 
-const App = () => {
+const ExpenseTrackerApp = () => {
   const [transactions, setTransactions] = useState([]);
-  const [text, setText] = useState('');
-  const [amount, setAmount] = useState('');
-  const [darkMode, setDarkMode] = useState(false);
 
-  const addTransaction = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    const localStorageTransactions = JSON.parse(
+      localStorage.getItem('transactions')
+    );
 
+    if (localStorageTransactions) {
+      setTransactions(localStorageTransactions);
+    }
+  }, []);
+
+  const addTransaction = (text, amount) => {
     if (text.trim() === '' || amount.trim() === '') {
-      alert('Please add a description and amount');
+      alert('Please add a text and amount');
     } else {
-      const newTransaction = {
+      const transaction = {
         id: generateID(),
         text,
         amount: +amount,
       };
 
-      setTransactions([...transactions, newTransaction]);
-      setText('');
-      setAmount('');
+      setTransactions([...transactions, transaction]);
     }
-  };
-
-  const handleRemoveTransaction = (id) => {
-    const updatedTransactions = transactions.filter(
-      (transaction) => transaction.id !== id
-    );
-    setTransactions(updatedTransactions);
   };
 
   const generateID = () => {
     return Math.floor(Math.random() * 100000000);
   };
 
-  const total = transactions
-    .reduce((acc, transaction) => acc + transaction.amount, 0)
-    .toFixed(2);
-  const income = transactions
-    .filter((transaction) => transaction.amount > 0)
-    .reduce((acc, transaction) => acc + transaction.amount, 0)
-    .toFixed(2);
-  const expense = (
-    transactions
-      .filter((transaction) => transaction.amount < 0)
-      .reduce((acc, transaction) => acc + transaction.amount, 0) * -1
-  ).toFixed(2);
+  const removeTransaction = (id) => {
+    setTransactions(
+      transactions.filter((transaction) => transaction.id !== id)
+    );
+  };
+
+  useEffect(() => {
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+  }, [transactions]);
+
+  const updateValues = () => {
+    const amounts = transactions.map((transaction) => transaction.amount);
+
+    const total = amounts.reduce((acc, item) => acc + item, 0).toFixed(2);
+    const income = amounts
+      .filter((item) => item > 0)
+      .reduce((acc, item) => acc + item, 0)
+      .toFixed(2);
+    const expense = (
+      amounts.filter((item) => item < 0).reduce((acc, item) => acc + item, 0) *
+      -1
+    ).toFixed(2);
+
+    return { total, income, expense };
+  };
 
   return (
-    <div className={`container ${darkMode ? 'dark-mode' : ''}`}>
-      <h1>Expense Tracker</h1>
-      <div className="balance">
-        <h2>
-          Balance: <span>${total}</span>
-        </h2>
-        <div className="income-expense">
-          <div>
-            <h3>Income</h3>
-            <p>+${income}</p>
-          </div>
-          <div>
-            <h3>Expense</h3>
-            <p>-${expense}</p>
-          </div>
-        </div>
+    <div>
+      <header>
+        <h2>Expense Tracker</h2>
+      </header>
+
+      <div className="container">
+        <Balance total={updateValues().total} />
+        <IncomeExpense
+          income={updateValues().income}
+          expense={updateValues().expense}
+        />
+        <TransactionHistory
+          transactions={transactions}
+          removeTransaction={removeTransaction}
+        />
+        <AddTransactionForm addTransaction={addTransaction} />
       </div>
-      <form onSubmit={addTransaction}>
-        <div className="form-control">
-          <label htmlFor="text">Description</label>
-          <input
-            type="text"
-            id="text"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="Enter description..."
-            required
-          />
-        </div>
-        <div className="form-control">
-          <label htmlFor="amount">Amount</label>
-          <input
-            type="number"
-            id="amount"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="Enter amount..."
-            required
-          />
-        </div>
-        <button type="submit">Add Transaction</button>
-      </form>
-      <ul className="list">
-        {transactions.map((transaction) => (
-          <li
-            key={transaction.id}
-            className={transaction.amount >= 0 ? 'plus' : 'minus'}
-          >
-            {transaction.description}
-            <span className="money">{transaction.amount}</span>
-            <button
-              className="delete-btn"
-              onClick={() => handleRemoveTransaction(transaction.id)}
-            >
-              <FontAwesomeIcon icon={faTrash} />
-            </button>
-          </li>
-        ))}
-      </ul>
-      <button onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? 'Light Mode' : 'Dark Mode'}
-      </button>
     </div>
   );
 };
 
-export default App;
+export default ExpenseTrackerApp;
