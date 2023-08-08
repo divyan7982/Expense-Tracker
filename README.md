@@ -1,6 +1,7 @@
 # Expense Tracker Web App 
 
-![image](https://github.com/divyan7982/Expense-Tracker/assets/131895243/26af2fd7-abf5-4376-bf1a-b41b2a31e5fc)
+![image](https://github.com/divyan7982/Expense-Tracker/assets/131895243/6a4a506b-eee6-403c-a5ac-c8d5b6a121f7)
+
 
 
 ## Introduction
@@ -12,8 +13,8 @@ Welcome to the Expense Tracker Web App built using ReactJS! This web application
 - User-friendly interface to add, edit, and delete expenses.
 - Categorize expenses for better organization and analysis.
 - Real-time calculation of the total expense amount and remaining budget.
-- toggle dark mode
 - Responsive design for a seamless experience on various devices.
+- I have implemented a history section to track past records and have incorporated local storage for preserving this data.
 
 ## Installation
 
@@ -62,11 +63,6 @@ The Expense Tracker Web App is built using the following technologies:
 - ReactJS: A JavaScript library for building user interfaces.
 - HTML5: The markup language used for structuring the app.
 - CSS3: Stylesheets used to design the app layout and appearance.
-
-## Toggle Dark Mode
-The Expense Tracker Web App also supports dark mode to provide a more comfortable viewing experience, especially during low-light conditions. To toggle dark mode, click on the "Dark Mode" button located at the bottom of the application.
-
-![image](https://github.com/divyan7982/Expense-Tracker/assets/131895243/3023c57b-9733-41b8-9594-9fa1bb09223c)
 
 
 ## Contributing
