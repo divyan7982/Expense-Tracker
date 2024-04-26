@@ -75,6 +75,4 @@ Contributions are welcome! If you have any bug fixes, enhancements, or new featu
 4. Push the branch to your fork: `git push origin my-feature`.
 5. Submit a pull request to the original repository.
 
-## License
 
-The Expense Tracker Web App is open-source software licensed under the [MIT License](LICENSE.txt).
